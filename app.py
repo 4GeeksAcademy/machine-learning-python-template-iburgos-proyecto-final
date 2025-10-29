@@ -166,7 +166,7 @@ with tab3:
     st.header("💡 Promociones Inteligentes")
 
     try:
-        df_promos = pd.read_csv("productos_promocion.csv")
+        df_promos = pd.read_csv("src/archivos/productos_promocion.csv")
 
         col1, col2, col3 = st.columns(3)
         total = len(df_promos)
