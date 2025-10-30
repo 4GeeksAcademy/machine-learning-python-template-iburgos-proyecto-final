@@ -51,7 +51,7 @@ with st.spinner("🚀 Cargando el modelo y los datos del sistema SUMA..."):
 # --- Encabezado con logo ---
 col_logo, col_title = st.columns([1, 5])
 with col_logo:
-    st.image("logo.jpg", width=130)
+    st.image("src/archivos/logo.jpg", width=130)
 with col_title:
     st.title("🛒 SUMA Supermercados - Plataforma de Inteligencia Comercial")
 
@@ -74,7 +74,7 @@ knn_model, product_to_idx, idx_to_product, sparse_matrix = load_model()
 
 @st.cache_data
 def load_sales():
-    df = pd.read_csv("ventas_anuales1.csv")
+    df = pd.read_csv("src/archivos/ventas_anuales1.csv")
     for col in ["cantidad", "coste", "venta", "beneficio", "margen_coste", "margen_venta"]:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
