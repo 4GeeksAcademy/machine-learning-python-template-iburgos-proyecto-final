@@ -19,3 +19,6 @@ scikit-learn
 scipy
 joblib
 plotly
+prophet==1.1.5
+pystan==2.19.1.1
+Cython>=0.22
