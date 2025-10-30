@@ -64,10 +64,10 @@ tab1, tab2, tab3, tab4 = st.tabs(["🤖 Recomendador", "💹 Dashboard de Ventas
 # ==============================
 @st.cache_resource
 def load_model():
-    knn_model = joblib.load("modelo_knn.pkl")
-    product_to_idx = joblib.load("product_to_idx.pkl")
-    idx_to_product = joblib.load("idx_to_product.pkl")
-    sparse_matrix = joblib.load("sparse_matrix.pkl")
+    knn_model = joblib.load("src/archivos/modelo_knn.pkl")
+    product_to_idx = joblib.load("src/archivos/product_to_idx.pkl")
+    idx_to_product = joblib.load("src/archivos/idx_to_product.pkl")
+    sparse_matrix = joblib.load("src/archivos/sparse_matrix.pkl")
     return knn_model, product_to_idx, idx_to_product, sparse_matrix
 
 knn_model, product_to_idx, idx_to_product, sparse_matrix = load_model()
@@ -224,7 +224,7 @@ with tab4:
     import joblib
     from prophet.plot import plot_plotly
 
-    model_dir = "modelos_prophet"
+    model_dir = "src/archivos/modelos_prophet"
 
     if not os.path.exists(model_dir) or len(os.listdir(model_dir)) == 0:
         st.warning("⚠️ No hay modelos entrenados. Ejecuta primero `train_prophet_inventario.py`.")
